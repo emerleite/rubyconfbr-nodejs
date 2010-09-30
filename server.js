@@ -5,8 +5,6 @@ var server = http.createServer(function (request, response) {
   response.end('Hello World no.de\n' + process.env.PORT);
 });
 
-port = process.env.PORT || "8000";
-
-server.listen(Number(port));
-
-console.log('Server running at http://127.0.0.1:8000/');
+//port = process.env.PORT || "8000";
+//server.listen(Number(port));
+server.listen(Number(process.env.PORT));
