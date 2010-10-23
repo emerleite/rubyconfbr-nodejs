@@ -8,13 +8,15 @@ var bayeux = new faye.NodeAdapter({
     
 var app = express.createServer();
 app.configure(function () {
+   app.use(express.logger());
    app.use(express.bodyDecoder());
    app.use(express.staticProvider(__dirname + '/public'));
 });
 
-app.post('/', function(req, res) {
-   bayeux.getClient().publish('/temporeal', req.body.texto);
-   res.send(200);
+app.post('/lance', function(req, res) {
+  if (req.param('token') != 'abc') { res.send(403); return; }
+  bayeux.getClient().publish('/temporeal', {texto: req.body.texto});
+  res.send(200);
 });
 
 port = process.env.PORT || "8000";

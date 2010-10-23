@@ -10,8 +10,8 @@
           timeout: 120
       });
       
-      client.subscribe('/temporeal', function(message) {
-        $("#lances").append(message + "<br/>");
+      client.subscribe('/temporeal', function(lance) {
+        $("#lances").append(lance.texto + "<br/>");
       });
     </script>
   </body>
