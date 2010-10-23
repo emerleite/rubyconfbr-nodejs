@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <h1>Tempo Real - Lances</h1>
+    <div id="lances"></div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="/faye.js"></script>
+    <script>
+      var client = new Faye.Client('/faye', {
+          timeout: 120
+      });
+      
+      client.subscribe('/temporeal', function(message) {
+        $("#lances").append(message + "<br/>");
+      });
+    </script>
+  </body>
+</html>
