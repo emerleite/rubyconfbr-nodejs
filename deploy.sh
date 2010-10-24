@@ -16,12 +16,12 @@ case "$1" in
   js)
     cp server_original.js server.js
     git commit -am "generate server.jsi from js"
-    git push heroku master
+    git push joyent master
     ;;
   coffee)
     coffee -c server.coffee
     git commit -am "generate server.jsi from coffeescript"
-    git push heroku master
+    git push joyent master
     ;;
   *)
     usuage
