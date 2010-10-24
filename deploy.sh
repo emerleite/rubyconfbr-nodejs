@@ -2,9 +2,14 @@
 
 usuage() {
   echo "Usuage: ./deploy.sh <mode>
-                mode                 {js|coffee}"
+                mode        {js|coffee}"
 	echo ""
   exit 1
+}
+
+deploy() {
+  git commit -am "generate server.js"
+  git push joyent master
 }
 
 if [ -z $1 ]
@@ -15,13 +20,11 @@ fi
 case "$1" in
   js)
     cp server_original.js server.js
-    git commit -am "generate server.jsi from js"
-    git push joyent master
+    deploy
     ;;
   coffee)
     coffee -c server.coffee
-    git commit -am "generate server.jsi from coffeescript"
-    git push joyent master
+    deploy
     ;;
   *)
     usuage
