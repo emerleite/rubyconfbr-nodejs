@@ -17,10 +17,12 @@ case "$1" in
     cp server_original.js server.js
     git commit -am "generate server.jsi from js"
     git push heroku master
+    ;;
   coffee)
     coffee -c server.coffee
     git commit -am "generate server.jsi from coffeescript"
     git push heroku master
+    ;;
   *)
     usuage
     ;;
