@@ -14,7 +14,7 @@ app.configure(function () {
 });
 
 app.post('/lance', function(req, res) {
-  if (req.param('token') != 'abc') { res.send(403); return; }
+  if (req.param('token') != 'f54d6efbde3034508e37aa0df14c3d8fe0c1b506c') { res.send(403); return; }
   bayeux.getClient().publish('/temporeal', {equipe: req.body.equipe, texto: req.body.texto});
   res.send(200);
 });
