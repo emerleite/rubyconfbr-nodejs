@@ -18,6 +18,7 @@
       return null;
     }
     bayeux.getClient().publish('/temporeal', {
+      time: req.body.time,
       texto: req.body.texto
     });
     return res.send(200);

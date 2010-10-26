@@ -1,6 +1,6 @@
 <html>
   <body>
-    <h1>Tempo Real - Lances emerleite</h1>
+    <h1>Tempo Real - Flamengo x Corinthians</h1>
     <div id="lances"></div>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -11,7 +11,8 @@
       });
       
       client.subscribe('/temporeal', function(lance) {
-        $("#lances").append(lance.texto + "<br/>");
+        $("#lances").append("<p><b>" + lance.time + "</b><br/>");
+        $("#lances").append(lance.texto + "</p><hr>");
       });
     </script>
   </body>
