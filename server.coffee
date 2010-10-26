@@ -16,7 +16,7 @@ app.post '/lance', (req, res) ->
     res.send(403) 
     return
   bayeux.getClient().publish '/temporeal', 
-    time: req.body.time
+    equipe: req.body.equipe
     texto: req.body.texto
   res.send 200
   
