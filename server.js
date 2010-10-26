@@ -15,7 +15,7 @@ app.configure(function () {
 
 app.post('/lance', function(req, res) {
   if (req.param('token') != 'abc') { res.send(403); return; }
-  bayeux.getClient().publish('/temporeal', {texto: req.body.texto});
+  bayeux.getClient().publish('/temporeal', {time: req.body.time, texto: req.body.texto});
   res.send(200);
 });
 
