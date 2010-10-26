@@ -12,7 +12,7 @@ app.configure ->
   app.use express.staticProvider("#{__dirname}/public")
 
 app.post '/lance', (req, res) ->
-  if req.param('token') != 'f54d6efbde3034508e37aa0df14c3d8fe0c1b506c'
+  if req.param('token') != 'abc'
     res.send(403) 
     return
   bayeux.getClient().publish '/temporeal', 
