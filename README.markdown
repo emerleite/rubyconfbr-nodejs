@@ -34,7 +34,7 @@ Runnning
         Open your terminal and send lances using curl:
         $ curl -X POST -H "Content-Type:application/json" -d '{"equipe":"flamengo","texto":"emerleite"}' http://localhost:8000/lance?token=abc
        
-        You can also use de Rails 3 app at: http://github.com/emerleite/rubyconfbr-nodeonrails
+        You can also use de Rails 3 app at: http://github.com/emerleite/rubyconfbr-rubyonnode
 
 Joyent deployment
 -----------------
