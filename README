@@ -4,6 +4,3 @@ git push joyent master
 Optionally:
 ssh node@72.2.126.230
 In a few minutes the nameservers will propagate your subdomain record and you will be able to access your server at emerleite.no.de. Until then use 72.2.126.230.
-
-
-Complicado
